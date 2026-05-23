@@ -11,9 +11,135 @@ Soluções customizadas da comunidade para recursos não-nativos do SFMC.
 
 ### SFMC-Cookbook
 - **URL**: https://github.com/JoernBerkefeld/SFMC-Cookbook
-- **Estrelas**: 130+
-- **Descrição**: Best practices, AMPscript patterns, SSJS utilities, encryption examples
-- **Use**: Referência geral para desenvolvimento
+- **Estrelas**: 136+
+- **Autor**: Jörn Berkefeld (@JoernBerkefeld)
+- **Descrição**: How to survive as a developer for Salesforce Marketing Cloud
+- **Módulos**: FAQ, General, SSJS, AMPscript, Einstein Recommendations, Encryption
+- **Use**: Guia completo de melhores práticas
+
+#### SSJS Patterns (do SFMC-Cookbook)
+
+##### Reading GET Parameters
+```javascript
+<script runat="server">
+Platform.Load("core", "1.1.1");
+
+var param = Platform.Request.GetQueryStringParameter("data");
+</script>
+```
+
+##### Reading POST Data
+```javascript
+<script runat="server">
+Platform.Load("core", "1.1.1");
+
+var postBody = Platform.Request.GetPostData();
+// Works only once! Save to variable if needed
+</script>
+```
+
+##### AMPscript ↔ SSJS Variables
+```javascript
+// SSJS to AMPscript
+Variable.SetValue('@myVar', temp);
+
+// AMPscript to SSJS
+var temp = Variable.GetValue('@myAmpscriptVariable');
+```
+
+##### Data Extension Operations
+```javascript
+// SELECT with Lookup
+var myDe = DataExtension.Init(deName);
+var myDeArr = myDe.Rows.Lookup(whereColumnArr, whereColumValueArr, limit, orderBy);
+
+// INSERT
+var count = Platform.Function.InsertData(deName, columnsArr, valuesArr);
+
+// UPDATE
+var count = Platform.Function.UpdateData(deName, whereCols, whereVals, setCols, setVals);
+
+// UPSERT
+var count = Platform.Function.UpsertData(deName, whereCols, whereVals, setCols, setVals);
+
+// DELETE
+var count = Platform.Function.DeleteData(deName, whereCols, whereVals);
+```
+
+##### SSJS Gotchas (SFMC-Cookbook)
+```javascript
+// ❌ FAILS - returning new object directly
+function() {
+    return { foo: bar };
+}
+
+// ✅ WORKS - assign to variable first
+function() {
+    var temp = { foo: bar };
+    return temp;
+}
+
+// ❌ AVOID - "new" operator with return
+function MyClass() {
+    var service = { attr1: true };
+    return service;
+}
+var myInstance = new MyClass(); // fails!
+
+// ✅ USE - "new" with this.service
+function MyClass() {
+    this.service = { attr1: true };
+}
+var myInstance = new MyClass();
+```
+
+#### AMPscript Patterns (do SFMC-Cookbook)
+
+##### Hide Code from Preview
+```html
+<div style="display:none">
+%%[
+// your code here
+]%%
+</div>
+```
+
+##### Dynamic Trackable Links
+```html
+%%[
+SET @myParam = "bar"
+SET @url = CONCAT("https://mydomain.com/path?foo=", @myParam)
+]%%
+<a href="%%=RedirectTo(@url)=%%">Link</a>
+```
+
+##### Data Extension Lookups
+```ampscript
+// Single value
+Set @value = Lookup(@de, @returnField, @whereCol, @whereValue)
+
+// Multiple rows (case-insensitive)
+Set @rows = LookupRows(@de, @whereCol, @whereValue)
+
+// Multiple rows sorted
+Set @rows = LookupOrderedRows(@de, 2000, "MyField ASC", @whereCol, @whereValue)
+```
+
+#### ESLint Config for SSJS
+```json
+{
+    "extends": ["eslint:recommended", "google"],
+    "parserOptions": { "ecmaVersion": 3 },
+    "globals": {
+        "Platform": "readonly",
+        "Variable": "readonly",
+        "Attribute": "readonly",
+        "DataExtension": "readonly",
+        "Subscriber": "readonly",
+        "Email": "readonly"
+    }
+}
+```
 
 ### email360/ssjs-lib
 - **URL**: https://github.com/email360/ssjs-lib
