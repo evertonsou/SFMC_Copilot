@@ -109,6 +109,7 @@ _Para novos projetos, crie a pasta correspondente ao cliente e implemente seus r
 
 ## Referências
 
+- **Repositório Oficial**: https://github.com/evertonsou/SFMC_Copilot
 - **Developer Center**: https://developer.salesforce.com/developer-centers/marketing-cloud
 - **AMPscript Guide**: https://ampscript.guide
 - **SSJS Docs**: https://ssjsdocs.xyz

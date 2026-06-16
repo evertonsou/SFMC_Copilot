@@ -121,7 +121,13 @@ sfmc-copilot/
 ---
 
 **Versão**: 2.0  
-**Última Atualização**: 2026-05-25  
+**Última Atualização**: 2026-06-16  
 **Total de Módulos**: 25 (12 novos na v2.0)  
 **Total de Community Solutions**: 9  
-**Tokens Estimados**: ~71K tokens
+**Tokens Estimados**: ~71K tokens  
+
+---
+
+### 🌐 Repositório Oficial do GitHub
+Este projeto de skill é hospedado no GitHub no repositório:
+* **URL:** https://github.com/evertonsou/SFMC_Copilot
