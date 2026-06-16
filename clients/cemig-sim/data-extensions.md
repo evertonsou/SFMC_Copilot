@@ -88,6 +88,137 @@ Como as tabelas sincronizadas do CRM (via Marketing Cloud Connect) possuem estru
 | **CreatedById** | Text | 18 | Não | ID do criador do plano |
 | **LastModifiedById** | Text | 18 | Não | ID do último modificador do plano |
 
+### 3.3 Tabela: Contact_Salesforce
+
+- **Origem:** Objeto `Contact` do Salesforce CRM (sincronizado automaticamente).
+- **Última Data de Atualização Offline:** 2026-06-11
+
+#### Estrutura de Campos (Contact_Salesforce)
+
+| Campo | Tipo no SFMC | Tamanho / Detalhes | Chave Primária? | Descrição |
+| :--- | :--- | :--- | :---: | :--- |
+| **\_ContactKey** | Text | 254 | **Sim** | ID do contato no Marketing Cloud |
+| **Id** | Text | 18 | **Sim** | ID do contato no Salesforce CRM |
+| **AccountId** | Text | 18 | Não | ID da conta associada no CRM |
+| **FirstName** | Text | 40 | Não | Primeiro nome do contato |
+| **LastName** | Text | 80 | Não | Sobrenome do contato |
+| **Name** | Text | 121 | Não | Nome completo do contato |
+| **Email** | EmailAddress | | Não | Endereço de e-mail do contato |
+| **MobilePhone** | Phone | | Não | Telefone celular cadastrado no CRM |
+| **NumeroCelularCompleto\_\_c** | Phone | | Não | Número celular completo formatado para WhatsApp |
+| **CPF\_\_c** | Text | 14 | Não | CPF do contato |
+| **AcessoAreaCliente\_\_c** | Boolean | | Não | Indica se possui acesso à área do cliente |
+| **LogouAreaCliente\_\_c** | Boolean | | Não | Indica se já realizou login na área do cliente |
+| **QuantidadeContasAcessoAreaCliente\_\_c** | Decimal | | Não | Quantidade de contas com acesso à área do cliente |
+| **SenhaEncriptografada\_\_c** | Text | 30 | Não | Senha criptografada do cliente |
+| **HasOptedOutOfEmail** | Boolean | | Não | Indica se o contato optou por não receber e-mails |
+| **MailingCity** | Text | 40 | Não | Cidade de correspondência |
+| **MailingCountry** | Text | 80 | Não | País de correspondência |
+| **IndividualId** | Text | 18 | Não | ID individual |
+| **RecordTypeId** | Text | 18 | Não | ID do Tipo de Registro no CRM |
+| **OwnerId** | Text | 18 | Não | Proprietário do registro no CRM |
+| **CreatedDate** | Date | | Não | Data de criação do registro no CRM |
+| **LastModifiedDate** | Date | | Não | Data de modificação do registro no CRM |
+| **CreatedById** | Text | 18 | Não | ID do usuário que criou o registro |
+| **LastModifiedById** | Text | 18 | Não | ID do último usuário que modificou o registro |
+| **MasterRecordId** | Text | 18 | Não | ID do registro master (mesclas) |
+| **ReportsToId** | Text | 18 | Não | ID do contato a quem se reporta |
+| **rh2\_\_Describe\_\_c** | Text | 18 | Não | Campo técnico Rollup Helper |
+
+### 3.4 Tabela: Opportunity_Salesforce
+
+- **Origem:** Objeto `Opportunity` do Salesforce CRM (sincronizado automaticamente).
+- **Última Data de Atualização Offline:** 2026-06-11
+
+#### Estrutura de Campos (Opportunity_Salesforce)
+
+| Campo | Tipo no SFMC | Tamanho / Detalhes | Chave Primária? | Descrição |
+| :--- | :--- | :--- | :---: | :--- |
+| **Id** | Text | 18 | **Sim** | ID da Oportunidade no Salesforce CRM |
+| **AccountId** | Text | 18 | Não | ID da conta associada à oportunidade |
+| **ContactId** | Text | 18 | Não | ID do contato associado à oportunidade (padrão) |
+| **ContatoId\_\_c** | Text | 18 | Não | ID do contato associado à oportunidade (customizado) |
+| **Lead\_\_c** | Text | 18 | Não | ID do Lead associado no CRM |
+| **Contrato\_\_c** | Text | 18 | Não | ID do contrato associado no CRM |
+| **ContractId** | Text | 18 | Não | ID do contrato padrão associado |
+| **CampaignId** | Text | 18 | Não | ID da campanha de marketing |
+| **StageName** | Text | 255 | Não | Fase/Etapa atual da oportunidade |
+| **IsClosed** | Boolean | | Não | Indica se a oportunidade está fechada |
+| **LinkParaAmbienteDeAssinatura\_\_c** | Text | 1300 | Não | Link individual para assinatura |
+| **Banco\_\_c** | Text | 255 | Não | Banco do financiamento |
+| **RepresentanteLegal\_\_c** | Text | 18 | Não | ID do representante legal |
+| **MeioPagamento\_\_c** | Text | 255 | Não | Meio de pagamento escolhido |
+| **CodigoAssociacao\_\_c** | Text | 1300 | Não | Código da associação vinculada |
+| **Contrante\_\_c** | Text | 18 | Não | ID do contratante |
+| **Cotacao\_\_c** | Text | 18 | Não | ID da cotação relacionada |
+| **Email\_\_c** | EmailAddress | | Não | E-mail registrado na oportunidade |
+| **EnviadoWhatsAppAjusteDoc\_\_c** | Boolean | | Não | Flag de envio de WhatsApp para ajuste de doc |
+| **EnviadoWhatsAppAoCliente\_\_c** | Boolean | | Não | Flag de envio de WhatsApp ao cliente |
+| **Financiamento\_\_c** | Text | 18 | Não | ID do financiamento |
+| **MotivoCancelamentoOpp\_\_c** | Text | 4000 | Não | Motivo do cancelamento |
+| **MotivoRepreovacaoOpp\_\_c** | Text | 4000 | Não | Motivo de reprovação |
+| **PartnerAccountId** | Text | 18 | Não | ID da conta parceira |
+| **Plano\_\_c** | Text | 18 | Não | ID do plano associado |
+| **Pricebook2Id** | Text | 18 | Não | ID do catálogo de preços |
+| **RecordTypeId** | Text | 18 | Não | ID do Tipo de Registro no CRM |
+| **Representante\_\_c** | Text | 18 | Não | ID do representante |
+| **SyncedQuoteId** | Text | 18 | Não | ID da cotação sincronizada |
+| **Vendedor\_\_c** | Text | 18 | Não | ID do vendedor |
+| **Name** | Text | 120 | Não | Nome da oportunidade |
+| **CloseDate** | Date | | Não | Data de fechamento |
+| **NomeConsorcio\_\_c** | Text | 1300 | Não | Nome do consórcio |
+| **NomeCliente\_\_c** | Text | 100 | Não | Nome do cliente |
+| **IndicadoPor\_\_c** | Text | 18 | Não | ID do contato/lead que indicou |
+| **LastStageChangeDate** | Date | | Não | Data da última alteração de fase |
+| **LastAmountChangedHistoryId** | Text | 18 | Não | ID do histórico de mudança de valor |
+| **LastCloseDateChangedHistoryId** | Text | 18 | Não | ID do histórico de mudança de data de fechamento |
+| **CreatedDate** | Date | | Não | Data de criação |
+| **LastModifiedDate** | Date | | Não | Data de modificação |
+| **CreatedById** | Text | 18 | Não | ID do usuário criador |
+| **LastModifiedById** | Text | 18 | Não | ID do último usuário que modificou |
+
+
+### 3.5 Tabela: Contrato\_\_c\_Salesforce
+
+- **Origem:** Objeto customizado `Contrato__c` do Salesforce CRM (sincronizado automaticamente).
+- **Última Data de Atualização Offline:** 2026-06-11
+
+#### Estrutura de Campos (Contrato\_\_c\_Salesforce)
+
+| Campo | Tipo no SFMC | Tamanho / Detalhes | Chave Primária? | Descrição |
+| :--- | :--- | :--- | :---: | :--- |
+| **Id** | Text | 18 | **Sim** | ID do Contrato no Salesforce CRM |
+| **Name** | Text | 80 | Não | Nome do contrato |
+| **Oportunidade\_\_c** | Text | 18 | Não | ID da Oportunidade relacionada |
+| **Status\_\_c** | Text | 255 | Não | Status atual do contrato (Ex: Aprovado, Cancelado) |
+| **ContratoAtivo\_\_c** | Boolean | | Não | Flag que indica se o contrato está ativo |
+| **AssinaturasRealizadas\_\_c** | Boolean | | Não | Indica se as assinaturas foram realizadas |
+| **Caso\_\_c** | Text | 18 | Não | ID do caso associado |
+| **Cliente\_\_c** | Text | 18 | Não | ID do cliente associado |
+| **Consorcio\_\_c** | Text | 18 | Não | ID do consórcio associado |
+| **ContratoAntecessor\_\_c** | Text | 18 | Não | ID do contrato antecessor |
+| **DataPrimeiraInjecao\_\_c** | Date | | Não | Data da primeira injeção de energia |
+| **Empreendimento\_\_c** | Text | 18 | Não | ID do empreendimento relacionado |
+| **EventoJucemg\_\_c** | Text | 18 | Não | ID do evento JUCEMG |
+| **IntegralizacaoAporteParticipacao\_\_c** | Text | 18 | Não | ID do aporte de participação |
+| **Motivo\_Cancelamento\_\_c** | Text | 4000 | Não | Motivo do cancelamento (campo 1) |
+| **MotivoCancelamentoContr\_\_c** | Text | 4000 | Não | Motivo do cancelamento (campo 2) |
+| **MotivoReprovacao\_\_c** | Text | 255 | Não | Motivo da reprovação (campo 1) |
+| **MotivoReprovacaoContr\_\_c** | Text | 4000 | Não | Motivo da reprovação (campo 2) |
+| **NomeCliente\_\_c** | Text | 1300 | Não | Nome do cliente |
+| **Plano\_\_c** | Text | 18 | Não | ID do plano associado ao contrato |
+| **RecordTypeId** | Text | 18 | Não | ID do Tipo de Registro no CRM |
+| **Tipo\_\_c** | Text | 255 | Não | Tipo de contrato |
+| **SaldoIndicacao\_\_c** | Decimal | | Não | Saldo de indicação acumulado |
+| **DocumentosReprovados\_\_c** | Text | 4000 | Não | Lista de documentos reprovados |
+| **DataTerminoContrato\_\_c** | Date | | Não | Data de término do contrato |
+| **JustificativaAjusteDocumentos\_\_c** | Text | 4000 | Não | Justificativa para ajuste de documentos |
+| **CreatedDate** | Date | | Não | Data de criação |
+| **LastModifiedDate** | Date | | Não | Data de modificação |
+| **CreatedById** | Text | 18 | Não | ID do usuário criador |
+| **LastModifiedById** | Text | 18 | Não | ID do último usuário modificador |
+| **OwnerId** | Text | 18 | Não | Proprietário do registro |
+
 > [!IMPORTANT]
 > **Controle de Atualização Offline:** Sempre que for requisitado o uso de um campo de CRM nas queries ou layouts que não conste na tabela acima, o Copilot deve **alertar o usuário e solicitar a estrutura atualizada da tabela de stage**, evitando suposições incorretas.
 
@@ -260,3 +391,4 @@ Ao escrever Queries SQL para carregar dados para as Data Extensions de disparo (
    - `Lead.TelefoneFormatadoWhats__c AS Telefone`
    - `Lead.LinkParaAmbienteDeAssinatura__c AS LinkAssinatura`
    - `'br' AS Localidade`
+4. **Regra do Campo Localidade**: Em qualquer base ou Data Extension de disparo que contenha campo de **Telefone** (como WhatsApp e SMS) e/ou seja destinada a disparos para **dispositivos móveis** (incluindo MobilePush), inclua obrigatoriamente o mapeamento de localidade fixo como `'br' AS Localidade` na query SQL.

@@ -23,6 +23,32 @@ Conforme a arquitetura do SFMC, a Cemig SIM não possui uma Data View nativa par
 
 ---
 
-## 2. Modelos de Templates do WhatsApp (Aprovados)
+### Campanha Move Minas - Régua de Aquecimento:
 
-*(Esta seção será preenchida à medida que os templates de WhatsApp forem desenvolvidos e homologados na Meta para a régua de aquecimento).*
+#### 💬 Template 1: Oferta de 26% (Contas até R$ 300)
+* **Texto:**
+  Olá, *{{1}}*! Economizar na conta de luz faz toda a diferença.
+  
+  Por isso, a *Cemig SIM* preparou uma oferta imperdível para você: até *26% de desconto* na sua conta de luz todos os meses! 💡
+  
+  É simples e rápido:
+  ✅ *Sem custos*
+  ✅ *Sem instalação de painéis*
+  ✅ Adesão *100% online*
+  
+  Clique no botão abaixo para falar com a gente e garantir o seu desconto! 👇
+* **Botão CTA:** Falar com a Cemig SIM (Link: `https://cloud.mkt.cemigsim.com.br/wppomni`)
+
+#### 💬 Template 2: Oferta de 20% (Contas a partir de R$ 300)
+* **Texto:**
+  Olá, *{{1}}*! Economizar na conta de luz faz toda a diferença.
+  
+  Por isso, a *Cemig SIM* preparou uma oferta imperdível para você: até *20% de desconto* na sua conta de luz todos os meses! 💡
+  
+  É simples e rápido:
+  ✅ *Sem custos*
+  ✅ *Sem instalação de painéis*
+  ✅ Adesão *100% online*
+  
+  Clique no botão abaixo para falar com a gente e garantir o seu desconto! 👇
+* **Botão CTA:** Falar com a Cemig SIM (Link: `https://cloud.mkt.cemigsim.com.br/wppomni`)
